@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加作者</title>
+</head>
+<body>
+<h1>添加作者</h1>
+<form action="" method="post">
+    <input type="text" name="author_name">
+    {# 多选  #}
+    <select name="books" multiple="multiple">
+        {% for book in book_list %}
+            <option value="{{ book.id }}">{{ book.title }}</option>
+        {% endfor %}
+
+    </select>
+    <input type="submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.css">
+    <title>删除成功</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 ">
+            <div class="page-header">
+                <h1>删除书籍成功</h1>
+            </div>
+            <p>删除书籍成功，<span id="s1">3</span>秒钟之后跳转到书籍列表页面</p>
+
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    // 三秒之后直接跳转
+    // var t = setTimeout(function () {
+    //    location.href = '/book_list/';
+    // }, 3000)
+    // 每隔一秒钟修改s1的text
+    var currentNum = document.getElementById('s1').innerText;
+    var t2 = setInterval(function () {
+        currentNum = document.getElementById('s1').innerText;
+        document.getElementById('s1').innerText = currentNum - 1
+        if (currentNum == 1) {
+            location.href = '/book_list/';
+        }
+
+    }, 1000)
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑书籍</title>
+</head>
+<body>
+编辑书籍
+<form action="" method="post">
+    <input type="text" name="book_title" value="{{ edit_book_obj.title }}">
+     <select name="press_id">
+        {% for press in press_list %}
+            {% if edit_book_obj.press == press %}
+                <option selected value="{{ press.id }}">{{ press.name }}</option>
+            {% else %}
+                <option value="{{ press.id }}">{{ press.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select><br/>
+    <input type="submit">
+</form>
+</body>
+</html>

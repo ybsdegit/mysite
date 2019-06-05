@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书籍列表页</title>
+</head>
+<body>
+
+<a href="/add_book/">添加书籍</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>序号</th>
+            <th>书籍id</th>
+            <th>书名称</th>
+            <th>书名价格</th>
+            <th>出版社</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for book in data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ book.id }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.price }}</td>
+            <td>{{ book.press.name }}</td>
+            <td>
+                <a href="/edit_book/?id={{ book.id }}">编辑</a>
+            </td>
+            <td>
+                <a href="/delete_book/?id={{ book.id }}">删除</a>
+            </td>
+{#            <td><a href="/delete_press/?id={{ i.id }}">删除</a> </td>#}
+{#            <td><a href="/edit_press/?id={{ i.id }}">编辑</a> </td>#}
+        </tr>
+    {% endfor  %}
+    </tbody>
+</table>
+</body>
+</html>
